@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand: #ffffff;
+  --color-accent: #f27d26; /* Warm orange from Recipe 2 */
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased selection:bg-accent selection:text-black;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .display-font {
+    font-family: var(--font-display);
+  }
+}
+
+.title-skew {
+  transform: skewX(-10deg);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
